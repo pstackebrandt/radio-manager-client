@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+# Redio Manager Cliente
+
+## Content
+
+- Initial state created by rh of alfatraining during lesson.
+
+## Getting Started with Create React App
+
+- Here follows the README created by create-react-app.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
