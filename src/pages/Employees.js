@@ -1,12 +1,17 @@
+// file name: Employees.js
 
 import { useState } from "react";
 import { useLoaderData, } from "react-router-dom";
 import { createEmployee, updateEmployee, deleteEmployee } from "../logic/RestHandler";
 
+// Komponente Employees
 function Employees() {
+    // Lade Daten mit useLoaderData
     const employees = useLoaderData();
+    
     const NO_ID = -1;
 
+    // Zustand für den aktuellen Mitarbeiter
     const [currentEmployee, setCurrentEmployee] = useState({
         employee_id: NO_ID,
         full_name: '',
@@ -15,7 +20,7 @@ function Employees() {
         job: ''
     })
 
-
+    // Funktion zum Anzeigen der Mitarbeiter
     function ShowEmployees() {
         return (
             <div className="employees">
@@ -37,11 +42,13 @@ function Employees() {
 
     }
 
+    // Funktion zum Aktualisieren des aktuellen Mitarbeiters
     function handleOnChange(event) {
         const { name, value } = event.target;
         setCurrentEmployee({ ...currentEmployee, [name]: value })
     }
 
+    // Funktion zum Hinzufügen, Aktualisieren oder Löschen eines Mitarbeiters
     function handleEmployeeSubmit(event) {
         event.preventDefault();
 
@@ -64,9 +71,7 @@ function Employees() {
         }
 
         window.location.reload();
-
     }
-
 
     return (
         <div className="App">

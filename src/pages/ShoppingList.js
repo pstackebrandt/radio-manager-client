@@ -1,9 +1,13 @@
+// file name: ShoppingList.js
+
 import React from 'react';
 import { useState } from 'react';
 
+// Die Komponente ist ein Relikt von RH aus einem früheren Projekt
+// Ich behalte sie vorerst, falls sie noch interessante Ideen enthält.
 function ShoppingList() {
 
-
+    // Initialisierung des aktuellen Einkaufsartikels mit useState
     const [currentShoppingItem, setCurrentShoppingItem] = useState({
         id: 1,
         itemName: 'Shoes',
@@ -11,11 +15,13 @@ function ShoppingList() {
         currency: '€'
     })
 
+    // Funktion zum Aktualisieren des aktuellen Einkaufsartikels
     function handleOnChange(event) {
         const { name, value } = event.target;
         setCurrentShoppingItem({ ...currentShoppingItem, [name]: value })
     }
 
+    // Funktion zum Hinzufügen des aktuellen Einkaufsartikels zur Liste
     function handleShoppingItemSubmit(event) {
         event.preventDefault();
 
@@ -24,6 +30,7 @@ function ShoppingList() {
         window.location.reload();
     }
 
+    // Render-Methode
     return (<div>
         <div className='shopping-list'>
             <h1>Shopping List</h1>
